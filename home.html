@@ -25,14 +25,9 @@
 </div>
 
 
-<h1 id="homeTitle">
-موقع المطور مجد
-</h1>
+<h1 id="homeTitle"></h1>
 
-
-<p id="status">
-🟢 متصل الآن
-</p>
+<p id="status"></p>
 
 
 </div>
@@ -42,24 +37,13 @@
 <div class="menu">
 
 
-<button id="createRoom">
-🎙️ إنشاء غرفة
-</button>
+<button id="createRoom"></button>
 
+<button id="joinRoom"></button>
 
-<button id="joinRoom">
-🚪 دخول غرفة
-</button>
+<button id="publicRoom"></button>
 
-
-<button id="publicRoom">
-🌍 الغرف العامة
-</button>
-
-
-<button id="settings">
-⚙️ الإعدادات
-</button>
+<button id="settings"></button>
 
 
 </div>
@@ -67,41 +51,29 @@
 
 </div>
 
+
+
+<script src="language.js"></script>
 
 
 <script>
 
-let lang = localStorage.getItem("language");
+let lang = localStorage.getItem("language") || "ar";
+
+let text = translations[lang];
 
 
-const title = document.getElementById("homeTitle");
-const status = document.getElementById("status");
+document.getElementById("homeTitle").textContent = text.title;
 
+document.getElementById("status").textContent = text.online;
 
-if(lang === "tr"){
+document.getElementById("createRoom").textContent = text.create;
 
-document.documentElement.lang="tr";
+document.getElementById("joinRoom").textContent = text.join;
 
-title.textContent =
-"Mecd Geliştirici";
+document.getElementById("publicRoom").textContent = text.rooms;
 
-status.textContent =
-"🟢 Şimdi çevrimiçi";
-
-
-document.getElementById("createRoom").textContent =
-"🎙️ Oda oluştur";
-
-document.getElementById("joinRoom").textContent =
-"🚪 Odaya katıl";
-
-document.getElementById("publicRoom").textContent =
-"🌍 Genel odalar";
-
-document.getElementById("settings").textContent =
-"⚙️ Ayarlar";
-
-}
+document.getElementById("settings").textContent = text.settings;
 
 
 
