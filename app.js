@@ -1,26 +1,20 @@
-let currentLang = "ar";
+import { auth, provider } from "./firebase.js";
+import { signInWithPopup } from "firebase/auth";
 
-function toggleLanguage() {
-  const title = document.getElementById("title");
-  const welcome = document.getElementById("welcome");
-  const loginBtn = document.getElementById("loginBtn");
-  const langBtn = document.getElementById("langBtn");
+const googleLogin = document.getElementById("googleLogin");
 
-  if (currentLang === "ar") {
-    currentLang = "tr";
+if (googleLogin) {
+  googleLogin.addEventListener("click", async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
 
-    document.documentElement.lang = "tr";
-    title.textContent = "🎙️ Mecd Geliştirici";
-    welcome.textContent = "Mecd Geliştirici'nin sitesine hoş geldiniz";
-    loginBtn.textContent = "Google ile giriş yap";
-    langBtn.textContent = "🇸🇦 العربية";
-  } else {
-    currentLang = "ar";
+      const user = result.user;
 
-    document.documentElement.lang = "ar";
-    title.textContent = "🎙️ موقع المطور مجد";
-    welcome.textContent = "مرحبًا بك في موقع المطور مجد";
-    loginBtn.textContent = "🇬🇴 تسجيل الدخول باستخدام Google";
-    langBtn.textContent = "🇹🇷 Türkçe";
-  }
+      alert("مرحبًا " + user.displayName);
+
+    } catch (error) {
+      alert("حدث خطأ في تسجيل الدخول");
+      console.log(error);
+    }
+  });
 }
