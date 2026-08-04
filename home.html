@@ -12,9 +12,11 @@
 
 </head>
 
+
 <body>
 
 <div class="home">
+
 
 <div class="profile">
 
@@ -22,47 +24,90 @@
 👤
 </div>
 
+
 <h1 id="homeTitle">
 موقع المطور مجد
 </h1>
 
-<p class="online" id="status">
+
+<p id="status">
 🟢 متصل الآن
 </p>
 
+
 </div>
+
 
 
 <div class="menu">
 
-<button>🎙️ إنشاء غرفة</button>
 
-<button>🚪 دخول غرفة</button>
+<button id="createRoom">
+🎙️ إنشاء غرفة
+</button>
 
-<button>🌍 الغرف العامة</button>
 
-<button>⚙️ الإعدادات</button>
+<button id="joinRoom">
+🚪 دخول غرفة
+</button>
+
+
+<button id="publicRoom">
+🌍 الغرف العامة
+</button>
+
+
+<button id="settings">
+⚙️ الإعدادات
+</button>
+
 
 </div>
 
+
 </div>
+
 
 
 <script>
 
 let lang = localStorage.getItem("language");
 
+
 if(lang === "tr"){
+
+
+document.documentElement.lang="tr";
+
 
 document.getElementById("homeTitle").textContent =
 "Mecd Geliştirici";
 
+
 document.getElementById("status").textContent =
 "🟢 Şimdi çevrimiçi";
+
+
+document.getElementById("createRoom").textContent =
+"🎙️ Oda oluştur";
+
+
+document.getElementById("joinRoom").textContent =
+"🚪 Odaya katıl";
+
+
+document.getElementById("publicRoom").textContent =
+"🌍 Genel odalar";
+
+
+document.getElementById("settings").textContent =
+"⚙️ Ayarlar";
+
 
 }
 
 </script>
+
 
 </body>
 
