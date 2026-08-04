@@ -2,62 +2,52 @@ import { auth, provider } from "./firebase.js";
 import { signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 
-// تغيير اللغة
-let arabic = true;
-
+// زر تغيير اللغة
 const langButton = document.getElementById("langToggleBtn");
 
-if(langButton){
+let arabic = true;
 
-  langButton.onclick = function(){
+langButton.onclick = () => {
 
-    if(arabic){
+  if(arabic){
 
-      document.getElementById("title").innerHTML = "🎙️ Mecd Geliştirici";
+    document.getElementById("title").textContent =
+    "🎙️ Mecd Geliştirici";
 
-      document.getElementById("welcome").innerHTML =
-      "Mecd Geliştirici'nin sitesine hoş geldiniz";
+    document.getElementById("welcome").textContent =
+    "Mecd Geliştirici'nin sitesine hoş geldiniz";
 
-    }else{
+  }else{
 
-      document.getElementById("title").innerHTML =
-      "🎙️ موقع المطور مجد";
+    document.getElementById("title").textContent =
+    "🎙️ موقع المطور مجد";
 
-      document.getElementById("welcome").innerHTML =
-      "مرحبًا بك في موقع المطور مجد";
+    document.getElementById("welcome").textContent =
+    "مرحبًا بك في موقع المطور مجد";
 
-    }
+  }
 
-    arabic = !arabic;
+  arabic = !arabic;
 
-  };
-
-}
+};
 
 
-// تسجيل الدخول بجوجل
+// زر تسجيل الدخول
 const googleButton = document.getElementById("googleLogin");
 
-if(googleButton){
+googleButton.onclick = async () => {
 
-  googleButton.onclick = async function(){
+  try {
 
-    try{
+    const result = await signInWithPopup(auth, provider);
 
-      const result = await signInWithPopup(auth, provider);
+    alert("مرحبًا " + result.user.displayName);
 
-      const user = result.user;
+  } catch(error){
 
-      alert("مرحبًا " + user.displayName);
+    console.log(error);
+    alert(error.message);
 
-    }catch(error){
+  }
 
-      console.log(error);
-
-      alert(error.message);
-
-    }
-
-  };
-
-}
+};
