@@ -1,3 +1,4 @@
+alert("app.js اشتغل");
 import { auth, db } from "./firebase.js";
 
 import {
