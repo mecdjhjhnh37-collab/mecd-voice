@@ -1,10 +1,8 @@
-// firebase.js
-
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD6w8FuhmXbZR7YOURU5z_OeIHdUZYQY",
+  apiKey: "ضع apiKey الخاص بك هنا",
   authDomain: "mecd-voice.firebaseapp.com",
   projectId: "mecd-voice",
   storageBucket: "mecd-voice.firebasestorage.app",
