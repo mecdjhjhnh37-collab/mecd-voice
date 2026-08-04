@@ -63,18 +63,22 @@
 <script src="language.js"></script>
 
 
-<script>
+<script type="module">
 
+import { db } from "./firebase.js";
+
+import {
+doc,
+getDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+
+// اللغة
 
 let language = localStorage.getItem("language") || "ar";
 
-
 let text = translations[language];
-
-
-
-document.getElementById("title").textContent =
-text.title;
 
 
 document.getElementById("status").textContent =
@@ -95,6 +99,47 @@ text.rooms;
 
 document.getElementById("settings").textContent =
 text.settings;
+
+
+
+// جلب بيانات المستخدم
+
+let uid = localStorage.getItem("userId");
+
+
+if(uid){
+
+
+let userRef = doc(db,"users",uid);
+
+
+let userSnap = await getDoc(userRef);
+
+
+
+if(userSnap.exists()){
+
+
+let user = userSnap.data();
+
+
+
+document.getElementById("title").textContent =
+user.name;
+
+
+document.getElementById("userPhoto").src =
+user.photo;
+
+
+document.getElementById("userId").textContent =
+"ID: " + user.id;
+
+
+}
+
+
+}
 
 
 
