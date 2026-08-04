@@ -1,7 +1,24 @@
 let arabic = true;
 
 
-// تغيير اللغة
+// عند فتح الصفحة نحفظ اللغة الحالية
+let savedLanguage = localStorage.getItem("language");
+
+if(savedLanguage === "tr"){
+  arabic = false;
+
+  document.getElementById("title").textContent =
+  "🎙️ Mecd Geliştirici";
+
+  document.getElementById("welcome").textContent =
+  "Mecd Geliştirici'nin sitesine hoş geldiniz";
+
+  document.getElementById("continueBtn").textContent =
+  "➡️ Devam et";
+}
+
+
+// زر تغيير اللغة
 document.getElementById("langToggleBtn").onclick = function(){
 
   if(arabic){
