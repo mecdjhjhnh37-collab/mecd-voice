@@ -1,24 +1,7 @@
 let arabic = true;
 
 
-// عند فتح الصفحة نحفظ اللغة الحالية
-let savedLanguage = localStorage.getItem("language");
-
-if(savedLanguage === "tr"){
-  arabic = false;
-
-  document.getElementById("title").textContent =
-  "🎙️ Mecd Geliştirici";
-
-  document.getElementById("welcome").textContent =
-  "Mecd Geliştirici'nin sitesine hoş geldiniz";
-
-  document.getElementById("continueBtn").textContent =
-  "➡️ Devam et";
-}
-
-
-// زر تغيير اللغة
+// تغيير اللغة
 document.getElementById("langToggleBtn").onclick = function(){
 
   if(arabic){
@@ -32,7 +15,7 @@ document.getElementById("langToggleBtn").onclick = function(){
     document.getElementById("continueBtn").textContent =
     "➡️ Devam et";
 
-    localStorage.setItem("language","tr");
+    arabic = false;
 
   }else{
 
@@ -45,17 +28,25 @@ document.getElementById("langToggleBtn").onclick = function(){
     document.getElementById("continueBtn").textContent =
     "➡️ أكمل";
 
-    localStorage.setItem("language","ar");
+    arabic = true;
 
   }
-
-  arabic = !arabic;
 
 };
 
 
 // زر أكمل
 document.getElementById("continueBtn").onclick = function(){
+
+  if(arabic){
+
+    localStorage.setItem("language","ar");
+
+  }else{
+
+    localStorage.setItem("language","tr");
+
+  }
 
   window.location.href = "home.html";
 
