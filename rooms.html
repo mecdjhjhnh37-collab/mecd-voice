@@ -12,39 +12,30 @@
 
 </head>
 
+
 <body>
 
 
 <div class="home">
 
-<h1 id="roomsTitle">
-🏠 الغرف
-</h1>
+
+<h1 id="roomsTitle"></h1>
 
 
-<button id="createRoom">
-➕ إنشاء غرفة
-</button>
+<button id="createRoom"></button>
 
 
-<button id="publicRooms">
-🌍 الغرف العامة
-</button>
+<button id="publicRooms"></button>
+
 
 
 <div class="room-card">
 
-<h2>
-🎙️ غرفة المطورين
-</h2>
+<h2 id="room1"></h2>
 
-<p>
-👥 0 / 10
-</p>
+<p id="people1"></p>
 
-<button>
-🚪 دخول
-</button>
+<button id="enter1"></button>
 
 </div>
 
@@ -52,22 +43,109 @@
 
 <div class="room-card">
 
-<h2>
-🔒 غرفة خاصة
-</h2>
+<h2 id="room2"></h2>
 
-<p>
-🔑 محمية بكلمة مرور
-</p>
+<p id="password"></p>
 
-<button>
-🚪 دخول
-</button>
+<button id="enter2"></button>
 
 </div>
 
 
 </div>
+
+
+
+<script src="language.js"></script>
+
+
+<script>
+
+let language = localStorage.getItem("language") || "ar";
+
+
+
+if(language === "tr"){
+
+
+document.getElementById("roomsTitle").textContent =
+"🏠 Odalar";
+
+
+document.getElementById("createRoom").textContent =
+"➕ Oda oluştur";
+
+
+document.getElementById("publicRooms").textContent =
+"🌍 Genel odalar";
+
+
+document.getElementById("room1").textContent =
+"🎙️ Geliştirici odası";
+
+
+document.getElementById("people1").textContent =
+"👥 0 / 10";
+
+
+document.getElementById("enter1").textContent =
+"🚪 Katıl";
+
+
+document.getElementById("room2").textContent =
+"🔒 Özel oda";
+
+
+document.getElementById("password").textContent =
+"🔑 Şifre korumalı";
+
+
+document.getElementById("enter2").textContent =
+"🚪 Katıl";
+
+
+}else{
+
+
+document.getElementById("roomsTitle").textContent =
+"🏠 الغرف";
+
+
+document.getElementById("createRoom").textContent =
+"➕ إنشاء غرفة";
+
+
+document.getElementById("publicRooms").textContent =
+"🌍 الغرف العامة";
+
+
+document.getElementById("room1").textContent =
+"🎙️ غرفة المطورين";
+
+
+document.getElementById("people1").textContent =
+"👥 0 / 10";
+
+
+document.getElementById("enter1").textContent =
+"🚪 دخول";
+
+
+document.getElementById("room2").textContent =
+"🔒 غرفة خاصة";
+
+
+document.getElementById("password").textContent =
+"🔑 محمية بكلمة مرور";
+
+
+document.getElementById("enter2").textContent =
+"🚪 دخول";
+
+
+}
+
+</script>
 
 
 </body>
