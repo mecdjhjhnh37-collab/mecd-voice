@@ -15,17 +15,20 @@
 
 <body>
 
+
 <div class="home">
 
 
 <div class="profile">
+
 
 <div class="avatar">
 👤
 </div>
 
 
-<h1 id="homeTitle"></h1>
+<h1 id="title"></h1>
+
 
 <p id="status"></p>
 
@@ -39,9 +42,12 @@
 
 <button id="createRoom"></button>
 
+
 <button id="joinRoom"></button>
 
+
 <button id="publicRoom"></button>
+
 
 <button id="settings"></button>
 
@@ -58,22 +64,36 @@
 
 <script>
 
-let lang = localStorage.getItem("language") || "ar";
 
-let text = translations[lang];
+let language = localStorage.getItem("language") || "ar";
 
 
-document.getElementById("homeTitle").textContent = text.title;
+let text = translations[language];
 
-document.getElementById("status").textContent = text.online;
 
-document.getElementById("createRoom").textContent = text.create;
 
-document.getElementById("joinRoom").textContent = text.join;
+document.getElementById("title").textContent =
+text.title;
 
-document.getElementById("publicRoom").textContent = text.rooms;
 
-document.getElementById("settings").textContent = text.settings;
+document.getElementById("status").textContent =
+text.online;
+
+
+document.getElementById("createRoom").textContent =
+text.create;
+
+
+document.getElementById("joinRoom").textContent =
+text.join;
+
+
+document.getElementById("publicRoom").textContent =
+text.rooms;
+
+
+document.getElementById("settings").textContent =
+text.settings;
 
 
 
