@@ -1,94 +1,13 @@
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>موقع المطور مجد</title>
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,sans-serif;
-}
-
-body{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(135deg,#020617,#0f172a,#1e3a8a);
-  color:white;
-  overflow:hidden;
-}
-
-body::before{
-  content:"";
-  position:absolute;
-  width:300px;
-  height:300px;
-  background:#2563eb;
-  border-radius:50%;
-  filter:blur(100px);
-  top:10%;
-  left:10%;
-}
-
-.box{
-  position:relative;
-  width:90%;
-  max-width:420px;
-  padding:35px;
-  border-radius:25px;
-  background:rgba(255,255,255,0.12);
-  backdrop-filter:blur(15px);
-  text-align:center;
-  box-shadow:0 0 30px #0008;
-}
-
-.logo{
-  font-size:55px;
-  margin-bottom:15px;
-}
-
-h1{
-  font-size:28px;
-  margin-bottom:15px;
-}
-
-p{
-  opacity:.9;
-  margin-bottom:25px;
-}
-
-button{
-  width:100%;
-  padding:15px;
-  margin-top:15px;
-  border:none;
-  border-radius:15px;
-  font-size:18px;
-  cursor:pointer;
-  transition:.3s;
-}
-
-button:hover{
-  transform:scale(1.05);
-}
-
-#langToggleBtn{
-  background:#2563eb;
-  color:white;
-}
-
-#googleLogin{
-  background:white;
-  color:#111;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -98,9 +17,7 @@ button:hover{
 
 <div class="logo">🎙️</div>
 
-<h1 id="title">
-موقع المطور مجد
-</h1>
+<h1 id="title">موقع المطور مجد</h1>
 
 <p id="welcome">
 مرحبًا بك في موقع المطور مجد
@@ -110,13 +27,15 @@ button:hover{
 🌍 Türkçe / العربية
 </button>
 
-<button id="googleLogin">
-🔐 تسجيل الدخول باستخدام Google
+<button id="continueBtn">
+➡️ أكمل
 </button>
 
 </div>
 
-<script type="module" src="app.js"></script>
+
+<script src="app.js"></script>
 
 </body>
+
 </html>
