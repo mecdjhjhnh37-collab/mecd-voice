@@ -1,82 +1,64 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقع المطور مجد</title>
-<link rel="stylesheet" href="style.css">
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial,sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-      background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1e3c72);
-      background-size:400% 400%;
-      animation:bg 10s ease infinite;
-      color:white;
-      text-align:center;
-    }
+<title>موقع المطور مجد</title>
 
-    @keyframes bg{
-      0%{background-position:0% 50%;}
-      50%{background-position:100% 50%;}
-      100%{background-position:0% 50%;}
-    }
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(45deg,#0f2027,#2c5364);
+  color:white;
+  font-family:Arial;
+  text-align:center;
+}
 
-    .box{
-      background:rgba(0,0,0,.35);
-      padding:30px;
-      border-radius:20px;
-      width:90%;
-      max-width:420px;
-      backdrop-filter:blur(10px);
-    }
+.box{
+  background:#0005;
+  padding:30px;
+  border-radius:20px;
+  width:90%;
+  max-width:400px;
+}
 
-    h1{
-      margin-bottom:10px;
-    }
+button{
+  width:100%;
+  padding:15px;
+  margin-top:15px;
+  border:0;
+  border-radius:12px;
+  font-size:18px;
+  cursor:pointer;
+}
 
-    p{
-      margin-bottom:20px;
-    }
+.lang{
+  background:#2563eb;
+  color:white;
+}
 
-    button{
-      width:100%;
-      padding:14px;
-      margin-top:10px;
-      border:none;
-      border-radius:12px;
-      font-size:18px;
-      cursor:pointer;
-    }
+.google{
+  background:white;
+  color:black;
+}
+</style>
 
-    .lang{
-      background:#2563eb;
-      color:white;
-    }
-
-    .google{
-      background:white;
-      color:black;
-    }
-  </style>
 </head>
 
 <body>
 
 <div class="box">
 
-<h1>🎙️ موقع المطور مجد</h1>
+<h1 id="title">
+🎙️ موقع المطور مجد
+</h1>
 
-<p id="text">
+<p id="welcome">
 مرحبًا بك في موقع المطور مجد
 </p>
 
@@ -90,39 +72,8 @@
 
 </div>
 
-<script>
 
-let ar=true;
-
-function changeLang(){
-
-if(ar){
-
-document.documentElement.lang="tr";
-
-document.querySelector("h1").innerHTML="🎙️ Mecd Geliştirici";
-
-document.getElementById("text").innerHTML="Mecd Geliştirici'nin sitesine hoş geldiniz";
-
-document.querySelector(".google").innerHTML="Google ile giriş yap";
-
-}else{
-
-document.documentElement.lang="ar";
-
-document.querySelector("h1").innerHTML="🎙️ موقع المطور مجد";
-
-document.getElementById("text").innerHTML="مرحبًا بك في موقع المطور مجد";
-
-document.querySelector(".google").innerHTML="🔐 تسجيل الدخول باستخدام Google";
-
-}
-
-ar=!ar;
-
-}
-
-</script>
 <script type="module" src="app.js"></script>
+
 </body>
 </html>
