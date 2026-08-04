@@ -74,37 +74,43 @@
 let lang = localStorage.getItem("language");
 
 
-if(lang === "tr"){
+const title = document.getElementById("homeTitle");
+const status = document.getElementById("status");
 
+
+if(lang === "tr"){
 
 document.documentElement.lang="tr";
 
-
-document.getElementById("homeTitle").textContent =
+title.textContent =
 "Mecd Geliştirici";
 
-
-document.getElementById("status").textContent =
+status.textContent =
 "🟢 Şimdi çevrimiçi";
 
 
 document.getElementById("createRoom").textContent =
 "🎙️ Oda oluştur";
 
-
 document.getElementById("joinRoom").textContent =
 "🚪 Odaya katıl";
-
 
 document.getElementById("publicRoom").textContent =
 "🌍 Genel odalar";
 
-
 document.getElementById("settings").textContent =
 "⚙️ Ayarlar";
 
-
 }
+
+
+
+document.getElementById("publicRoom").onclick = function(){
+
+window.location.href = "rooms.html";
+
+};
+
 
 </script>
 
