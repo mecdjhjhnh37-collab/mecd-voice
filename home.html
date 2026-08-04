@@ -16,46 +16,112 @@
 <body>
 
 
-<div class="box">
+<div class="home">
 
 
-<div class="logo">
-🎙️
-</div>
+<div class="profile">
 
 
-<h1 id="title">
-موقع المطور مجد
+<img id="userPhoto"
+class="avatar"
+src="default.png">
+
+
+<h1 id="userName">
+المستخدم
 </h1>
 
 
-<p id="welcome">
-مرحبًا بك في موقع المطور مجد
+<p id="userId">
+ID: --------
 </p>
 
 
-
-<button id="langToggleBtn">
-🌍 Türkçe / العربية
-</button>
-
-
-
-<br><br>
-
-
-
-<button id="googleLogin">
-🔐 تسجيل الدخول بواسطة Google
-</button>
-
+<p id="status"
+class="online">
+🟢 متصل الآن
+</p>
 
 
 </div>
 
 
 
-<script type="module" src="app.js"></script>
+<div class="menu">
+
+
+<button>
+🎙️ إنشاء غرفة
+</button>
+
+
+<button>
+🚪 دخول غرفة
+</button>
+
+
+<button>
+🌍 الغرف العامة
+</button>
+
+
+<button>
+⚙️ الإعدادات
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<script type="module">
+
+
+import { auth } from "./firebase.js";
+
+import {
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+
+onAuthStateChanged(auth,(user)=>{
+
+
+if(user){
+
+
+document.getElementById("userName")
+.textContent =
+user.displayName;
+
+
+document.getElementById("userPhoto")
+.src =
+user.photoURL;
+
+
+document.getElementById("userId")
+.textContent =
+"ID: " + user.uid;
+
+
+}else{
+
+
+window.location.href="index.html";
+
+
+}
+
+
+});
+
+
+</script>
 
 
 </body>
