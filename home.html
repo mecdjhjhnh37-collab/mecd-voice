@@ -22,11 +22,11 @@
 👤
 </div>
 
-<h1>
-مجد
+<h1 id="homeTitle">
+موقع المطور مجد
 </h1>
 
-<p class="online">
+<p class="online" id="status">
 🟢 متصل الآن
 </p>
 
@@ -35,27 +35,34 @@
 
 <div class="menu">
 
-<button>
-🎙️ إنشاء غرفة
-</button>
+<button>🎙️ إنشاء غرفة</button>
 
-<button>
-🚪 دخول غرفة
-</button>
+<button>🚪 دخول غرفة</button>
 
-<button>
-🌍 الغرف العامة
-</button>
+<button>🌍 الغرف العامة</button>
 
-<button>
-⚙️ الإعدادات
-</button>
+<button>⚙️ الإعدادات</button>
+
+</div>
 
 </div>
 
 
-</div>
+<script>
 
+let lang = localStorage.getItem("language");
+
+if(lang === "tr"){
+
+document.getElementById("homeTitle").textContent =
+"Mecd Geliştirici";
+
+document.getElementById("status").textContent =
+"🟢 Şimdi çevrimiçi";
+
+}
+
+</script>
 
 </body>
 
