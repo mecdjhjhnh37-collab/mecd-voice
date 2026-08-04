@@ -1,7 +1,7 @@
 let arabic = true;
 
 
-// زر تغيير اللغة
+// تغيير اللغة
 document.getElementById("langToggleBtn").onclick = function(){
 
   if(arabic){
@@ -15,6 +15,8 @@ document.getElementById("langToggleBtn").onclick = function(){
     document.getElementById("continueBtn").textContent =
     "➡️ Devam et";
 
+    localStorage.setItem("language","tr");
+
   }else{
 
     document.getElementById("title").textContent =
@@ -25,6 +27,8 @@ document.getElementById("langToggleBtn").onclick = function(){
 
     document.getElementById("continueBtn").textContent =
     "➡️ أكمل";
+
+    localStorage.setItem("language","ar");
 
   }
 
